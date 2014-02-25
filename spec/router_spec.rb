@@ -1,6 +1,5 @@
 require 'webrick'
 require 'rails_lite'
-require 'rspec'
 
 describe Route do
   let(:req) { WEBrick::HTTPRequest.new(:Logger => nil) }
