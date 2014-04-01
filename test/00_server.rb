@@ -1,6 +1,6 @@
 require 'active_support/core_ext'
 require 'webrick'
-require 'rails_lite'
+require_relative '../lib/rails_lite'
 
 # http://www.ruby-doc.org/stdlib-2.0/libdoc/webrick/rdoc/WEBrick.html
 # http://www.ruby-doc.org/stdlib-2.0/libdoc/webrick/rdoc/WEBrick/HTTPRequest.html
