@@ -17,8 +17,8 @@ class ControllerBase
   def render_content(content, type)
   end
 
-  # helper method to alias @already_rendered
-  def already_rendered?
+  # helper method to alias @already_built_response
+  def already_built_response?
   end
 
   # set the response status code and header

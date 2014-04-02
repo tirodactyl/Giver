@@ -26,15 +26,15 @@ describe ControllerBase do
       users_controller.res.body.should == "somebody"
     end
 
-    describe "#already_rendered?" do
+    describe "#already_built_response?" do
       let(:users_controller2) { UsersController.new(req, res) }
       it "is false before rendering" do
-        users_controller2.already_rendered?.should be_false
+        users_controller2.already_built_response?.should be_false
       end
 
       it "is true after rendering content" do
         users_controller2.render_content "sombody", "text/html"
-        users_controller2.already_rendered?.should be_true
+        users_controller2.already_built_response?.should be_true
       end
 
       it "raises an error when attempting to render twice" do
@@ -59,15 +59,15 @@ describe ControllerBase do
       users_controller.res.status.should == 302
     end
 
-    describe "#already_rendered?" do
+    describe "#already_built_response?" do
       let(:users_controller2) { UsersController.new(req, res) }
       it "is false before rendering" do
-        users_controller2.already_rendered?.should be_false
+        users_controller2.already_built_response?.should be_false
       end
 
       it "is true after rendering content" do
         users_controller2.redirect_to("http://google.com")
-        users_controller2.already_rendered?.should be_true
+        users_controller2.already_built_response?.should be_true
       end
 
       it "raises an error when attempting to render twice" do
@@ -90,15 +90,15 @@ describe ControllerBase do
       users_controller.res.content_type.should == "text/html"
     end
 
-    describe "#already_rendered?" do
+    describe "#already_built_response?" do
       let(:users_controller2) { UsersController.new(req, res) }
       it "is false before rendering" do
-        users_controller2.already_rendered?.should be_false
+        users_controller2.already_built_response?.should be_false
       end
 
       it "is true after rendering content" do
         users_controller2.render(:index)
-        users_controller2.already_rendered?.should be_true
+        users_controller2.already_built_response?.should be_true
       end
 
       it "raises an error when attempting to render twice" do
